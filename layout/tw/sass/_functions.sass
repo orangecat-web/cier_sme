@@ -1,0 +1,247 @@
+// "=" 等同 "@mixin"
+$width: 100% !global
+// margin & padding 基本預設值為 1rem
+$baseSize : 1rem !global
+
+// @function = 宣告運算式開始沒這個不會動可能會造成整個 SASS 錯誤, margin = 運算式名稱類似 ID 之類的東西, ($count: 1) 計算式預設值
+// @return = 運算式結構開始, 就是說怎麼計算, $baseSize = 基本預設值 "+,-,*,/" 這個可以自己設定要怎麼計算, $count 計算式
+@function size($count: 1)
+	@return $baseSize * $count
+
+// logo
+=logo($count)
+	img, a>img
+		width: size($count)
+		&:hover
+			transform: scale(1.15, 1.15)
+			+hover-transition
+
+// 間距設定運算式
+// 以 margin 來說, 在 SASS 寫法 +m(4) = margin: 4rem
+=m($count)
+	margin: size($count)
+=mx($count)
+	margin:
+		left: size($count)
+		right: size($count)
+=my($count)
+	margin:
+		top: size($count)
+		bottom: size($count)
+=mt($count)
+	margin-top: size($count)
+=mb($count)
+	margin-bottom: size($count)
+=ml($count)
+	margin-left: size($count)
+=mr($count)
+	margin-right: size($count)
+=mx-auto
+	margin:
+		left: auto
+		right: auto
+=my-auto
+	margin:
+		top: auto
+		bottom: auto
+=mt-auto
+	margin-top: auto
+=mb-auto
+	margin-bottom: auto
+=ml-auto
+	margin-left: auto
+=mr-auto
+	margin-right: auto
+=p($count)
+	padding: size($count)
+=px($count)
+	padding:
+		left: size($count)
+		right: size($count)
+=py($count)
+	padding:
+		top: size($count)
+		bottom: size($count)
+=pt($count)
+	padding-top: size($count)
+=pb($count)
+	padding-bottom: size($count)
+=pl($count)
+	padding-left: size($count)
+=pr($count)
+	padding-right: size($count)
+
+// 圓角設定
+// top 上方左右圓角, bottom 下方左右圓角, left 左邊上下圓角, right 右邊上下圓角
+// top-left 左上方圓角, top-right 右上方圓角, bottom-left 左下方圓角, bottom-right 右下方圓角
+// 服用方式: "+radius(1, top-left)", 尺寸放前面位置放後面
+=radius($count, $position: 1)
+	@if $position == "top" or $position == "bottom"
+		border:
+			#{$position}-left-radius: size($count)
+			#{$position}-right-radius: size($count)
+	@else if $position == "left" or $position == "right"
+		border-top-#{$position}-radius: size($count)
+		border-bottom-#{$position}-radius: size($count)
+	@else if $position == "top-left" or $position == "top-right" or $position == "bottom-left" or $position == "bottom-right"
+		border-#{$position}-radius: size($count)
+	@else
+		border-radius: size($count)
+
+// 字型設定 ex. +fonttype("Noto Serif JP", "Raleway")
+=fonttype($enfont: "Roboto", $chfont: "Noto Sans TC")
+	@if $chfont == Noto Serif TC, $chfont == Noto Sans SC, $chfont == Noto Serif SC, $chfont == Noto Sans JP, $chfont == Noto Serif JP, $enfont == Roboto, $enfont == Raleway
+		font-family: ($enfont), ($chfont), sans-serif
+	@else if $chfont null == true, $enfont null == true
+		font-family: 'Roboto', 'Noto Sans TC', sans-serif
+
+
+// 文字限制超過字數...
+=mline($mline: 1)
+	overflow: hidden
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	@if $mline null == false
+		-webkit-line-clamp: $mline
+	@else
+		-webkit-line-clamp: 1
+
+// btn icon
+// ex:
+// youtube:
+	// +btnIcon(youtube)
+=btnIcon($btnIcons: 1)
+	+mt(3)
+	+mb(1)
+	text-decoration: none
+	span
+		background: map-get($btnIcon, base)
+		border: none
+		+radius(.5)
+		color: map-get($iconFont, base)
+		+py(.35)
+		+px(1)
+		+hover-transition
+		&::before, &::after
+			font:
+				family: 'Font Awesome\ 5 Free', 'Font Awesome 5 Solid', 'Font Awesome 5 Regular', 'Font Awesome 5 Brands'
+				size: size(.9)
+				weight: 900
+		&:hover
+			background: map-get($btnIcon, dark)
+			color: map-get($iconFont, light)
+	@if $btnIcons == "nav"
+		span
+			background: none
+			color: $black
+			+tac
+			+p(0)
+			&::before
+				content: "\f0c9"
+				font-size: size(1.75)
+				+m(0)
+			&:hover
+				background: none
+				color: $black
+	@else if $btnIcons == "nav-close"
+		span
+			background: none
+			color: $white
+			+tac
+			+p(0)
+			&::before
+				content: "\f00d"
+				font-size: size(1.75)
+				+m(0)
+			&:hover
+				background: none
+				color: $black
+	@else if $btnIcons == "back"
+		span
+			+tar
+			&::before
+				content: "\f060"
+				+mr(.5)
+	@else if $btnIcons == "info"
+		span
+			+tar
+			&::before
+				content: "\f129"
+				+mr(.5)
+	@else if $btnIcons == "cart"
+		span
+			+tar
+			&::before
+				content: "\f07a"
+				+mr(.5)
+	@else if $btnIcons == "card"
+		span
+			+tar
+			&::before
+				content: "\f09d"
+				+mr(.5)
+	@else if $btnIcons == "download"
+		span
+			+tar
+			&::after
+				content: "\f019"
+				+ml(.5)
+	@else if $btnIcons == "youtube"
+		span
+			background: map-get($youtube, base)
+			+tar
+			&:hover
+				background: map-get($youtube, dark)
+			&::before
+				content: "\f167"
+				+mr(.5)
+	@else if $btnIcons == "fb"
+		span
+			background: map-get($fb, base)
+			+tar
+			&:hover
+				background: map-get($fb, dark)
+			&::before
+				content: "\f39e"
+				+mr(.5)
+	@else if $btnIcons == "google"
+		span
+			background: map-get($google, base)
+			+tar
+			&:hover
+				background: map-get($google, dark)
+			&::before
+				content: "\f1a0"
+				+mr(.5)
+	@else if $btnIcons == "applepay"
+		span
+			background: map-get($applepay, base)
+			+tar
+			&:hover
+				background: map-get($applepay, light)
+			&::before
+				content: "\f415"
+				+mr(.5)
+	@else if $btnIcons == "paypal"
+		span
+			background: map-get($paypal, base)
+			+tar
+			&:hover
+				background: map-get($paypal, dark)
+			&::before
+				content: "\f1ed"
+				+mr(.5)
+	@else if $btnIcons == "alipay"
+		span
+			background: map-get($alipay, base)
+			+tar
+			&:hover
+				background: map-get($alipay, dark)
+			&::before
+				content: "\f642"
+				+mr(.5)
+	@else
+		span
+			&::after
+				content: "\f067"
+				+ml(.5)

@@ -1,0 +1,9 @@
+/*----------------------------------------------------------------------*/
+/*測試用menu*/
+.ifun_text_menu { position:fixed; top:0; left:0; z-index:10004; }
+.ifun_text_menu a { display:block; text-decoration:none; }
+.ifun_text_menu > ul > li > a { text-indent:-10000px; width:30px; height:30px; }
+.ifun_text_menu > ul ul { display:none; position:absolute; top:30px; left:0; width:176px; }
+.ifun_text_menu > ul > li:hover > ul { display:block; }
+.ifun_text_menu > ul ul li { background-color:rgba(255,255,255,0.75); }
+.ifun_text_menu > ul ul a { padding:5px 10px; line-height:180%; font-size:0.875rem; color:#333; }

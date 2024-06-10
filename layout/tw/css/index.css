@@ -1,0 +1,577 @@
+@charset "UTF-8";
+/* Orange's web template v2.1 */
+a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  color: #222; }
+  a:hover {
+    color: #006f98; }
+  a:active {
+    color: #81a3e0; }
+
+h5 {
+  font-size: 1rem;
+  color: #222; }
+
+h4 {
+  font-size: 1.25rem;
+  color: #222; }
+
+h3 {
+  font-size: 1.5rem;
+  color: #222; }
+
+h2 {
+  font-size: 1.75rem;
+  color: #222; }
+
+h1 {
+  font-size: 2rem;
+  color: #222; }
+
+h1 {
+  font-weight: 700; }
+
+h2, h3, h4, h5 {
+  font-weight: 400; }
+
+/*全域設定, 字型, 尺寸, 背景 */
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 16px; }
+  html body {
+    background: linear-gradient(to right, #e9f1ff, #fff 20%, #fff 80%, #e9f1ff);
+    font-family: "Roboto", "Noto Sans TC", sans-serif;
+    font-size: 1rem;
+    color: #222;
+    position: relative; }
+    html body::before {
+      position: absolute;
+      left: 0;
+      top: 22.8125rem;
+      content: "";
+      width: 165px;
+      height: 455px;
+      background: url("../images/bg-body-l.png") left top no-repeat; }
+    html body::after {
+      position: absolute;
+      right: 0;
+      top: 30rem;
+      content: "";
+      width: 201px;
+      height: 546px;
+      background: url("../images/bg-body-r.png") left top no-repeat; }
+
+/*header */
+header {
+  position: relative;
+  background: url("../images/bg-header.png") left top no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  header div.logo {
+    text-align: center; }
+    header div.logo h1 {
+      text-align: center; }
+      header div.logo h1 img {
+        max-width: 308px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem; }
+        header div.logo h1 img:last-of-type {
+          margin-bottom: 1rem; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+      header div.logo h1 {
+        flex-direction: column; }
+        header div.logo h1 img {
+          max-width: 270px; } }
+    @media screen and (max-width: 991.98px) {
+      header div.logo h1 {
+        display: flex; } }
+    @media screen and (max-width: 1199.98px) {
+      header div.logo h1 {
+        text-align: left;
+        margin-left: 1rem; } }
+    @media screen and (min-width: 1200px) {
+      header div.logo h1 {
+        text-align: left;
+        margin-left: 1rem; } }
+    @media screen and (min-width: 1281px) {
+      header div.logo h1 {
+        text-align: center; } }
+    @media screen and (max-width: 767.98px) {
+      header div.logo h1 {
+        display: initial; } }
+    @media screen and (max-width: 575px) {
+      header div.logo h1 {
+        display: flex;
+        margin-left: 0rem;
+        text-align: center; } }
+  header div.login {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    text-align: right; }
+    @media screen and (max-width: 767.98px) {
+      header div.login {
+        position: inherit;
+        top: initial;
+        right: initial;
+        text-align: center; } }
+    header div.login div.btn {
+      margin-bottom: 0.5rem; }
+      header div.login div.btn button {
+        position: relative;
+        border-radius: 2rem;
+        padding: 0.5rem 1rem 0.5rem 3rem; }
+        header div.login div.btn button:before {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 1.35rem;
+          width: 1.25rem;
+          height: 1.25rem; }
+        header div.login div.btn button:first-of-type {
+          background: #e9f1ff;
+          border: #376dce 1px solid;
+          color: #376dce;
+          margin-right: 0.5rem; }
+          header div.login div.btn button:first-of-type:before {
+            background: url("../images/icon-member.svg") left 50% no-repeat; }
+        header div.login div.btn button:last-of-type {
+          background: #376dce;
+          border: #376dce 1px solid;
+          color: #fff; }
+          header div.login div.btn button:last-of-type:before {
+            background: url("../images/icon-logout.svg") left 50% no-repeat; }
+    header div.login p.login_info span:first-of-type {
+      color: #a00; }
+    header div.login p.login_info span:last-of-type {
+      border-left: #222 1px solid;
+      color: #f00;
+      margin-left: 0.5rem;
+      padding-left: 0.75rem; }
+  header nav#Menu {
+    margin-top: 3rem; }
+    header nav#Menu ul {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center; }
+      header nav#Menu ul li {
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem; }
+        header nav#Menu ul li:first-of-type(1) {
+          padding-left: 0rem; }
+        header nav#Menu ul li:last-of-type(4) {
+          padding-right: 0rem; }
+        header nav#Menu ul li p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.3125rem;
+          font-size: 1.5rem;
+          color: #fff !important;
+          line-height: initial;
+          text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
+          padding: 1rem; }
+          header nav#Menu ul li p img {
+            margin-right: 0.5rem; }
+        header nav#Menu ul li p.Nav01 {
+          background: rgba(0, 170, 233, 0.95); }
+          header nav#Menu ul li p.Nav01:hover {
+            background: rgba(70, 205, 255, 0.95); }
+          header nav#Menu ul li p.Nav01:active {
+            background: rgba(0, 103, 141, 0.95); }
+        header nav#Menu ul li p.Nav02 {
+          background: rgba(55, 109, 206, 0.95); }
+          header nav#Menu ul li p.Nav02:hover {
+            background: rgba(129, 163, 224, 0.95); }
+          header nav#Menu ul li p.Nav02:active {
+            background: rgba(33, 70, 136, 0.95); }
+        header nav#Menu ul li p.Nav03 {
+          background: rgba(235, 170, 13, 0.95); }
+          header nav#Menu ul li p.Nav03:hover {
+            background: rgba(246, 201, 94, 0.95); }
+          header nav#Menu ul li p.Nav03:active {
+            background: rgba(148, 107, 8, 0.95); }
+        header nav#Menu ul li p.Nav04 {
+          justify-content: initial;
+          padding-left: 3rem;
+          background: rgba(255, 153, 0, 0.95); }
+          header nav#Menu ul li p.Nav04:hover {
+            background: rgba(255, 190, 92, 0.95); }
+          header nav#Menu ul li p.Nav04:active {
+            background: rgba(163, 98, 0, 0.95); }
+    @media screen and (max-width: 1199.98px) {
+      header nav#Menu ul li p {
+        font-size: 1.2rem; }
+        header nav#Menu ul li p img {
+          max-width: 52px; } }
+    @media screen and (max-width: 991.98px) {
+      header nav#Menu ul {
+        flex-wrap: wrap; }
+        header nav#Menu ul li {
+          width: 50%;
+          margin-bottom: 1rem;
+          padding-left: 1rem;
+          padding-right: 1rem; }
+          header nav#Menu ul li:nth-of-type(1) {
+            padding-left: 1rem; }
+          header nav#Menu ul li:nth-of-type(4) {
+            padding-right: 1rem; }
+            header nav#Menu ul li:nth-of-type(4) p {
+              justify-content: center;
+              padding-left: 1rem; } }
+    @media screen and (max-width: 575px) {
+      header nav#Menu ul li {
+        width: 100%; } }
+
+/*footer */
+footer {
+  color: #222;
+  margin-top: 7rem; }
+  footer > div {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+    footer > div:first-of-type {
+      background: url(../images/bg-footer.png) bottom center no-repeat; }
+  footer div.unit {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem; }
+    footer div.unit > div {
+      display: flex;
+      align-items: center; }
+  footer ul.contact {
+    justify-content: center; }
+  @media screen and (max-width: 767.98px) {
+    footer div.unit > div {
+      justify-content: center;
+      margin-bottom: 1rem; }
+    footer ul.contact {
+      text-align: center; }
+      footer ul.contact li {
+        margin-bottom: 0.5rem; } }
+
+/*基礎框架 1280px */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 999; }
+
+div.title {
+  text-align: center; }
+  div.title h2 {
+    font-size: 2.125rem; }
+    div.title h2 span {
+      position: relative; }
+      div.title h2 span::before {
+        content: "";
+        position: absolute;
+        left: -3.75rem;
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 1.6rem; }
+
+/*審核區塊 */
+div.audit {
+  border: #ddd 1px solid;
+  border-radius: 0.3125rem;
+  margin-bottom: 5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+  div.audit ul {
+    margin-left: auto;
+    margin-right: auto; }
+    div.audit ul li:nth-of-type(odd) p:first-of-type {
+      background: #e5eaf6; }
+    div.audit ul li:nth-of-type(even) p:first-of-type {
+      background: #ddeef4; }
+    div.audit ul li p {
+      position: relative;
+      text-align: center; }
+      div.audit ul li p:first-of-type {
+        max-width: 120px;
+        border-radius: 1rem;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto; }
+        div.audit ul li p:first-of-type img {
+          max-height: 2.9rem;
+          margin-top: 2rem;
+          margin-bottom: 2rem; }
+      div.audit ul li p:last-of-type {
+        font-size: 1.25rem;
+        color: #000;
+        margin-top: 0.75rem; }
+      div.audit ul li p span {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        width: 2.3125rem;
+        height: 2.3125rem;
+        background: #e13a24;
+        border: #fff 2px solid;
+        border-radius: 2rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 1.125rem;
+        color: #fff;
+        padding-top: 0.175rem; }
+
+/*重要統計指標 */
+div.statistical {
+  margin-bottom: 11rem; }
+  div.statistical > div.title {
+    margin-bottom: 5rem; }
+    div.statistical > div.title h2 span::before {
+      background: url("../images/icon-ind-tit01.svg") 50% 50% no-repeat #e5eaf6;
+      background-size: 1.3125rem; }
+  div.statistical div.pieChart {
+    /*圓餅圖 */
+    border-bottom: #ddd 1px solid;
+    margin-bottom: 6rem;
+    padding-bottom: 6rem; }
+    div.statistical div.pieChart div.title {
+      margin-bottom: 1rem; }
+      div.statistical div.pieChart div.title h5 span.Number {
+        font-size: 2.5rem;
+        color: #00aae9;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem; }
+        div.statistical div.pieChart div.title h5 span.Number span {
+          font-size: 1rem;
+          color: #222; }
+    @media screen and (max-width: 1199.98px) {
+      div.statistical div.pieChart h5 {
+        display: flex;
+        flex-direction: column; } }
+    @media screen and (max-width: 575px) {
+      div.statistical div.pieChart div.col-md {
+        padding-left: 0rem;
+        padding-right: 0rem; } }
+    div.statistical div.pieChart div.pie {
+      height: 500px; }
+    @media screen and (max-width: 1199.98px) {
+      div.statistical div.pieChart div.pie {
+        height: 476px; }
+      div.statistical div.pieChart div#pieChart02 {
+        height: 446px;
+        margin-top: 3rem; } }
+    @media screen and (max-width: 991.98px) {
+      div.statistical div.pieChart div.pie {
+        height: 335px; }
+      div.statistical div.pieChart div#pieChart02 {
+        height: 335px;
+        margin-top: 2rem; } }
+    @media screen and (max-width: 767.98px) {
+      div.statistical div.pieChart div.pie {
+        height: 450px;
+        margin-bottom: 5rem; }
+      div.statistical div.pieChart div#pieChart02 {
+        height: 438px;
+        margin-top: 0rem; }
+      div.statistical div.pieChart div#pieChart03 {
+        margin-bottom: 0rem; } }
+    @media screen and (max-width: 575px) {
+      div.statistical div.pieChart div.pie {
+        height: 378px;
+        margin-top: 0rem;
+        margin-bottom: 3rem; }
+      div.statistical div.pieChart div#pieChart02 {
+        height: 400px;
+        margin-top: 0rem; } }
+  div.statistical div.tabs-wrapper .r-tabs-accordion-title {
+    display: none; }
+  div.statistical div.tabs-wrapper .r-tabs-panel.r-tabs-state-active {
+    display: block; }
+  @media screen and (max-width: 991.98px) {
+    div.statistical div.tabs-wrapper .r-tabs-nav {
+      display: none; }
+    div.statistical div.tabs-wrapper .r-tabs-accordion-title {
+      display: block; } }
+  div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav {
+    /* tab 標籤 */
+    max-width: 400px;
+    padding-left: 0rem;
+    padding-right: 0rem; }
+    div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li {
+      width: 100%; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a {
+        display: block;
+        border-bottom: #eee 1px solid;
+        border-left: 10px solid;
+        font-size: 1.35rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        padding-left: 3.75rem; }
+        div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a:hover {
+          background: #ddd;
+          color: #222; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a.tab-1 {
+        border-left-color: #f90; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a.tab-2 {
+        border-left-color: #ebaa0d; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a.tab-3 {
+        border-left-color: #376dce; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a.tab-4 {
+        border-left-color: #00aae9; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a.tab-5 {
+        border-left-color: #5db2d1; }
+      div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li:last-of-type a {
+        border-bottom: none; }
+    div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li.active a {
+      background: #ddd; }
+  @media screen and (max-width: 1199.98px) {
+    div.statistical div.tabs-wrapper div#horizontalTab ul.tab-nav li a {
+      padding-left: 1.75rem; } }
+  div.statistical div.tabs-wrapper div.target-tabs {
+    /* tab 內容 */
+    overflow: hidden;
+    padding-left: 0rem;
+    padding-right: 0rem; }
+    div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title {
+      border-bottom: 1px solid #eee;
+      font-size: 1.35rem;
+      text-align: center;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      position: relative; }
+      div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title::after {
+        content: "";
+        position: absolute;
+        top: 40%;
+        right: 2rem;
+        width: 20px;
+        height: 20px;
+        background: url("../images/caret-up-solid.svg") 50% 50% no-repeat; }
+    div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title.r-tabs-state-active::after {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg); }
+    div.statistical div.tabs-wrapper div.target-tabs div.tab-content {
+      display: none; }
+    div.statistical div.tabs-wrapper div.target-tabs div.tab-content.active {
+      display: block; }
+  div.statistical div.tabs-wrapper div.content-bar {
+    height: 480px; }
+  @media screen and (max-width: 1199.98px) {
+    div.statistical div.tabs-wrapper ul.tab-nav {
+      max-width: 280px; }
+      div.statistical div.tabs-wrapper ul.tab-nav li a {
+        font-size: 1.25rem;
+        padding-left: 1.5rem; } }
+  @media screen and (max-width: 767.98px) {
+    div.statistical div.tabs-wrapper select.tab-nav {
+      display: block;
+      width: 100%;
+      background: #eee;
+      border: none;
+      border-bottom: #ddd 1px solid;
+      font-size: 1.25rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem; }
+    div.statistical div.tabs-wrapper ul.tab-nav {
+      display: none; }
+    div.statistical div.tabs-wrapper div.content-bar {
+      height: 300px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+    div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title {
+      text-align: left; }
+      div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title::after {
+        right: 1rem; } }
+  @media screen and (max-width: 575px) {
+    div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title {
+      text-align: center; }
+      div.statistical div.tabs-wrapper div.target-tabs div.r-tabs-accordion-title::after {
+        right: 0rem; }
+    div.statistical div.tabs-wrapper div.content-bar {
+      position: relative; }
+      div.statistical div.tabs-wrapper div.content-bar tspan {
+        font-size: 0.75rem; } }
+
+@media screen and (max-width: 575px) {
+  div.statistical {
+    margin-bottom: 5rem; }
+    div.statistical div.title {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      margin-bottom: 0rem; }
+      div.statistical div.title h2 span {
+        padding-left: 3rem; }
+        div.statistical div.title h2 span::before {
+          left: -0.75rem; }
+    div.statistical div.pieChart {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem; } }
+/*白皮書專區 */
+div.whiteBook div.title {
+  width: 100%;
+  margin-bottom: 4rem; }
+  div.whiteBook div.title h2 span::before {
+    background: url("../images/icon-ind-tit02.svg") 50% 50% no-repeat #e5eaf6;
+    background-size: 1rem; }
+div.whiteBook div.content {
+  align-items: center; }
+  div.whiteBook div.content div.img {
+    padding-left: 0rem;
+    padding-right: 0rem; }
+  div.whiteBook div.content div.whitePaper {
+    background: #fff;
+    border: #ddd 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 1px;
+    border-radius: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.6875rem;
+    padding-bottom: 1.6875rem; }
+    div.whiteBook div.content div.whitePaper h3 {
+      border-bottom: #ddd 1px solid;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem; }
+    div.whiteBook div.content div.whitePaper p {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4; }
+@media screen and (max-width: 991.98px) {
+  div.whiteBook div.content {
+    align-items: start; }
+    div.whiteBook div.content div.whitePaper {
+      margin-bottom: 1rem; }
+      div.whiteBook div.content div.whitePaper p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; } }
+@media screen and (max-width: 767.98px) {
+  div.whiteBook div.content {
+    justify-content: center; }
+    div.whiteBook div.content div.img {
+      text-align: center;
+      margin-bottom: 1rem; }
+    div.whiteBook div.content div.whitePaper {
+      margin-bottom: 1rem; } }
+@media screen and (max-width: 575px) {
+  div.whiteBook div.content div {
+    padding-left: 0rem;
+    padding-right: 0rem; }
+  div.whiteBook div.content div.whitePaper p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; } }
+
+.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor,
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+  background: #ddd; }

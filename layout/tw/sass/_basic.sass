@@ -1,0 +1,261 @@
+/* Orange's web template v2.1 */
+@charset "utf-8"
+// breakpoint RWD setting
+@import _breakpoint
+// mixin 不會變動的基本項目
+@import _mixin
+// functions 基本架構運算
+@import _functions
+// color 網站用色
+@import _colors
+
+// a link
+a
+	+hover-transition
+	color: map-get($alink, base)
+	&:hover
+		color: map-get($alink, dark)
+	&:active
+		color: map-get($alink, light)
+
+// headings 標題文字大小, # 等於標體 h"1"
+// 標題 = # = 6 -$i(標題大小 h"1"-h"6")
+// 計算方式 ($i + 3rem) * .25
+// EX. 6-1=5 <=$i , (5+3)*.25=2, h1 = 2rem
+@for $i from 1 through 5
+	h#{6 - $i}
+		font-size: ($i + 3rem) * .25
+		color: $titleH2
+@function headings($from:1, $to:6)
+	@if $from == $to
+		@return 'h#{$from}'
+	@else
+		@return 'h#{$from},' + headings($from+1, $to)
+#{headings(1,1)}
+	font-weight: 700
+#{headings(2,5)}
+	font-weight: 400
+/*全域設定, 字型, 尺寸, 背景*/
+html
+	width: 100%
+	height: 100%
+	font-size: 16px
+	body
+		background: linear-gradient(to right, #e9f1ff, #fff 20%, #fff 80%, #e9f1ff)
+		font-family: 'Roboto', 'Noto Sans TC', sans-serif
+		font-size: 1rem
+		color: $fonts
+		position: relative
+		&::before
+			position: absolute
+			left: 0
+			top: 22.8125rem
+			content: ''
+			width: 165px
+			height: 455px
+			background: url('../images/bg-body-l.png') left top no-repeat
+		&::after
+			position: absolute
+			right: 0
+			top: 30rem
+			content: ''
+			width: 201px
+			height: 546px
+			background: url('../images/bg-body-r.png') left top no-repeat
+
+/*header*/
+header
+	position: relative
+	background: url('../images/bg-header.png') left top no-repeat
+	+py(2)
+	div.logo
+		+tac
+		h1
+			+tac
+			img
+				max-width: 308px
+				+mx(.5)
+				&:last-of-type
+					+mb(1)
+		+breakpoint(iphone5p)
+			h1
+				flex-direction: column
+				img
+					max-width: 270px
+		+breakpoint(md)
+			h1
+				display: flex
+		+breakpoint(lg)
+			h1
+				+tal
+				+ml(1)
+		+breakpoint(xl)
+			h1
+				+tal
+				+ml(1)
+		+breakpoint(mo1280)
+			h1
+				+tac
+		+breakpoint(sm)
+			h1
+				display: initial
+		+breakpoint
+			h1
+				display: flex
+				+ml(0)
+				+tac
+
+	div.login
+		position: absolute
+		top: 1.5rem
+		right: 2rem
+		+tar
+		+breakpoint(sm)
+			position: inherit
+			top: initial
+			right: initial
+			+tac
+		div.btn
+			+mb(.5)
+			button
+				position: relative
+				+radius(2)
+				padding: .5rem 1rem .5rem 3rem
+				&:before
+					content: ''
+					position: absolute
+					top: 10px
+					left: 1.35rem
+					width: 1.25rem
+					height: 1.25rem
+				&:first-of-type
+					background: #e9f1ff
+					border: #376dce 1px solid
+					color: #376dce
+					+mr(.5)
+					&:before
+						background: url("../images/icon-member.svg") left 50% no-repeat
+				&:last-of-type
+					background: #376dce
+					border: #376dce 1px solid
+					color: $white
+					&:before
+						background: url("../images/icon-logout.svg") left 50% no-repeat
+		p.login_info
+			span
+				&:first-of-type
+					color: #a00
+				&:last-of-type
+					border-left: #222 1px solid
+					color: #f00
+					+ml(.5)
+					+pl(.75)
+	nav#Menu
+		+mt(3)
+		ul
+			width: 100%
+			display: flex
+			flex-direction: row
+			justify-content: center
+			li
+				width: 100%
+				+px(.5)
+				&:first-of-type(1)
+					+pl(0)
+				&:last-of-type(4)
+					+pr(0)
+				p
+					display: flex
+					align-items: center
+					justify-content: center
+					+radius(0.3125)
+					font-size: 1.5rem
+					color: $white !important
+					line-height: initial
+					text-shadow: rgba(0,0,0,.5) 1px 1px 2px
+					+p(1)
+					img
+						+mr(.5)
+				p.Nav01
+					background: map-get($nav-li01, base)
+					&:hover
+						background: map-get($nav-li01, light)
+					&:active
+						background: map-get($nav-li01, dark)
+				p.Nav02
+					background: map-get($nav-li02, base)
+					&:hover
+						background: map-get($nav-li02, light)
+					&:active
+						background: map-get($nav-li02, dark)
+				p.Nav03
+					background: map-get($nav-li03, base)
+					&:hover
+						background: map-get($nav-li03, light)
+					&:active
+						background: map-get($nav-li03, dark)
+				p.Nav04
+					justify-content: initial
+					+pl(3)
+					background: map-get($nav-li04, base)
+					&:hover
+						background: map-get($nav-li04, light)
+					&:active
+						background: map-get($nav-li04, dark)
+		+breakpoint(lg)
+			ul
+				li
+					p
+						font-size: 1.2rem
+						img
+							max-width: 52px
+		+breakpoint(md)
+			ul
+				flex-wrap: wrap
+				li
+					width: 50%
+					+mb(1)
+					+px(1)
+					&:nth-of-type(1)
+						+pl(1)
+					&:nth-of-type(4)
+						+pr(1)
+						p
+							justify-content: center
+							+pl(1)
+		+breakpoint
+			ul
+				li
+					width: 100%
+/*footer*/
+footer
+	color: $fonts
+	+mt(7)
+	>div
+		+py(1)
+		&:first-of-type
+			background: url(../images/bg-footer.png) bottom center no-repeat
+	div.unit
+		justify-content: center
+		+mx-auto
+		+mb(1)
+		>div
+			display: flex
+			align-items: center
+	ul.contact
+		justify-content: center
+	// RWD
+	+breakpoint(sm)
+		div.unit
+			>div
+				justify-content: center
+				+mb(1)
+		ul.contact
+			+tac
+			li
+				+mb(.5)
+/*基礎框架 1280px*/
+.container
+	+mx-auto
+	position: relative
+	z-index: 999

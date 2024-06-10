@@ -1,0 +1,317 @@
+//中經院-中小企業動態資料庫-cier_sme index sass
+@import _basic
+div.title
+	+tac
+	h2
+		font-size: 2.125rem
+		span
+			position: relative
+			&::before
+				content: ""
+				position: absolute
+				left: -3.75rem
+				width: 3.125rem
+				height: 3.125rem
+				+radius(1.6)
+/*審核區塊*/
+div.audit
+	border: $border 1px solid
+	+radius(.3125)
+	+mb(5)
+	+py(1.5)
+	ul
+		+mx-auto
+		li
+			&:nth-of-type(odd)
+				p
+					&:first-of-type
+						background: #e5eaf6
+			&:nth-of-type(even)
+				p
+					&:first-of-type
+						background: #ddeef4
+			p
+				position: relative
+				+tac
+				&:first-of-type
+					max-width: 120px
+					+radius(1)
+					align-self: center
+					+mx-auto
+					img
+						max-height: 2.9rem
+						+my(2)
+				&:last-of-type
+					font-size: 1.25rem
+					color: $black
+					+mt(.75)
+				span
+					position: absolute
+					top: -1rem
+					right: -1rem
+					width: 2.3125rem
+					height: 2.3125rem
+					background: #e13a24
+					border: $white 2px solid
+					+radius(2)
+					font-family: 'Oswald', sans-serif
+					font-size: 1.125rem
+					color: $white
+					+pt(.175)
+
+/*重要統計指標*/
+div.statistical
+	+mb(11)
+	>div.title
+		+mb(5)
+		h2
+			span
+				&::before
+					background: url('../images/icon-ind-tit01.svg') 50% 50% no-repeat #e5eaf6
+					background-size: 1.3125rem
+	div.pieChart
+		/*圓餅圖*/
+		border-bottom: $border 1px solid
+		+mb(6)
+		+pb(6)
+		div.title
+			+mb(1)
+			h5
+				span.Number
+					font-size: 2.5rem
+					color: #00aae9
+					+px(.5)
+					span
+						font-size: 1rem
+						color: #222
+		+breakpoint(lg)
+			h5
+				display: flex
+				flex-direction: column
+		+breakpoint
+			div.col-md
+				+px(0)
+		div.pie
+			height: 500px
+		// RWD
+		+breakpoint(lg)
+			div.pie
+				height: 476px
+			div#pieChart02
+				height: 446px
+				+mt(3)
+		+breakpoint(md)
+			div.pie
+				height: 335px
+			div#pieChart02
+				height: 335px
+				+mt(2)
+		+breakpoint(sm)
+			div.pie
+				height: 450px
+				+mb(5)
+			div#pieChart02
+				height: 438px
+				+mt(0)
+			div#pieChart03
+				+mb(0)
+		+breakpoint
+			div.pie
+				height: 378px
+				+mt(0)
+				+mb(3)
+			div#pieChart02
+				height: 400px
+				+mt(0)
+
+	// Tab for amcharts cloumn & bar
+	div.tabs-wrapper
+		// tabs control
+		.r-tabs-accordion-title
+			display: none
+		.r-tabs-panel.r-tabs-state-active
+			display: block
+		+breakpoint(md)
+			.r-tabs-nav
+				display: none
+			.r-tabs-accordion-title
+				display: block
+		div#horizontalTab
+			ul.tab-nav
+				/* tab 標籤 */
+				max-width: 400px
+				+px(0)
+				li
+					width: 100%
+					a
+						display: block
+						border-bottom: #eee 1px solid
+						border-left: 10px solid
+						font-size: 1.35rem
+						+py(1.5)
+						+pl(3.75)
+						&:hover
+							background: #ddd
+							color: $fonts
+					a.tab-1
+						border-left-color: #f90
+					a.tab-2
+						border-left-color: #ebaa0d
+					a.tab-3
+						border-left-color: #376dce
+					a.tab-4
+						border-left-color: #00aae9
+					a.tab-5
+						border-left-color: #5db2d1
+					&:last-of-type
+						a
+							border-bottom: none
+				li.active
+					a
+						background: #ddd
+			+breakpoint(lg)
+				ul.tab-nav
+					li
+						a
+							+pl(1.75)
+
+		// tab content
+		div.target-tabs
+			div.r-tabs-accordion-title
+				border-bottom: 1px solid #eee
+				font-size: 1.35rem
+				+tac
+				+py(1.5)
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					top: 40%
+					right: 2rem
+					width: 20px
+					height: 20px
+					background: url('../images/caret-up-solid.svg') 50% 50% no-repeat
+			div.r-tabs-accordion-title.r-tabs-state-active
+				&::after
+					-webkit-transform: rotate(180deg)
+					-moz-transform: rotate(180deg)
+					transform: rotate(180deg)
+
+			/* tab 內容 */
+			overflow: hidden
+			+px(0)
+			div.tab-content
+				display: none
+			div.tab-content.active
+				display: block
+		div.content-bar
+			height: 480px
+		+breakpoint(lg)
+			ul.tab-nav
+				max-width: 280px
+				li
+					a
+						font-size: 1.25rem
+						+pl(1.5)
+		+breakpoint(sm)
+			select.tab-nav
+				display: block
+				width: 100%
+				background: #eee
+				border: none
+				border-bottom: $border 1px solid
+				font-size: 1.25rem
+				+py(1.5)
+				+px(1)
+			ul.tab-nav
+				display: none
+			div.content-bar
+				height: 300px
+		+breakpoint(iphone5p)
+			div.target-tabs
+				div.r-tabs-accordion-title
+					+tal
+					&::after
+						right: 1rem
+		+breakpoint
+			div.target-tabs
+				div.r-tabs-accordion-title
+					+tac
+					&::after
+						right: 0rem
+			div.content-bar
+				position: relative
+				// left: -3rem
+				tspan
+					font-size: .75rem
++breakpoint
+	div.statistical
+		+mb(5)
+		div.title
+			+my(2)
+			+mb(0)
+			h2
+				span
+					+pl(3)
+					&::before
+						left: -.75rem
+		div.pieChart
+			+mb(2.5)
+			+pb(2.5)
+
+
+/*白皮書專區*/
+div.whiteBook
+	div.title
+		width: 100%
+		+mb(4)
+		h2
+			span
+				&::before
+					background: url('../images/icon-ind-tit02.svg') 50% 50% no-repeat #e5eaf6
+					background-size: 1rem
+	div.content
+		align-items: center
+		div.img
+			+px(0)
+		div.whitePaper
+			background: $white
+			border: $border 1px solid
+			box-shadow: $shadow 0 0 1px
+			+radius(1.25)
+			+px(1)
+			+py(1.6875)
+			h3
+				border-bottom: $border 1px solid
+				+mb(1)
+				+pb(1)
+				+px(.25)
+			p
+				+px(.25)
+				+mline(4)
+
+	+breakpoint(md)
+		div.content
+			align-items: start
+			div.whitePaper
+				+mb(1)
+				p
+					+mline(2)
+	+breakpoint(sm)
+		div.content
+			justify-content: center
+			div.img
+				+tac
+				+mb(1)
+			div.whitePaper
+				+mb(1)
+	+breakpoint
+		div.content
+			div
+				+px(0)
+			div.whitePaper
+				p
+					+mline(3)
+.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor,
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor
+	background: $border

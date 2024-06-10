@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>首頁 - 中小企業動態資料庫</title>
+	<link rel="stylesheet" href="layout/tw/css/_reset.css">
+	<link rel="stylesheet" href="layout/tw/css/_include.css">
+	<link rel="stylesheet" href="layout/tw/css/_bootstrap-grid.css">
+	<link rel="stylesheet" href="layout/tw/css/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.css">
+</head>
+
+<body>
+	<!-- header -->
+	<header>
+		<div class="logo">
+			<h1>
+				<a href="index.html" title="經濟部中小企業處中小企業動態資料庫">
+					<img src="layout/tw/images/logo.png" alt="經濟部中小企業處中小企業動態資料庫">
+					<img src="layout/tw/images/main-title.svg" alt="經濟部中小企業處中小企業動態資料庫">
+				</a>
+			</h1>
+		</div>
+		<div class="login">
+			<div class="btn">
+				<button>修改基本資料</button>
+				<button>登出</button>
+			</div>
+			<p class="login_info">
+				OOO 您好
+				592 秒後自動登出
+			</p>
+		</div>
+		<nav id="Menu">
+			<div class="container">
+				<ul>
+					<li>
+						<a href="#" title="中小企業統計資料">
+							<p class="Nav01">
+								<img src="layout/tw/images/icon-main-nav-01.png" alt="中小企業統計資料">
+								<span>中小企業統計資料</span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="中小企業白皮書專題">
+							<p class="Nav02">
+								<img src="layout/tw/images/icon-main-nav-02.png" alt="中小企業白皮書專題">
+								<span>中小企業白皮書專題</span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="各國中小企業發展政策專區">
+							<p class="Nav03">
+								<img src="layout/tw/images/icon-main-nav-03.png" alt="各國中小企業發展政策專區">
+								<span>各國中小企業發展政策專區</span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="友善連結">
+							<p class="Nav04">
+								<img src="layout/tw/images/icon-main-nav-04.png" alt="友善連結">
+								<span>友善連結</span>
+							</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- container -->
+	<section class="container">
+		<!-- 審核區塊 暫時隱藏 -->
+		<div class="audit" hidden>
+			<ul class="row col-lg-7">
+				<li class="col-md-3 col-6">
+					<p>
+						<a href="" title="交件提醒"><img src="layout/tw/images/icon-doc01.svg" alt="交件提醒"></a>
+						<span>3</span>
+					</p>
+					<p>交件提醒</p>
+				</li>
+				<li class="col-md-3 col-6">
+					<p>
+						<a href="" title="退件"><img src="layout/tw/images/icon-doc02.svg" alt="退件"></a>
+						<span>1</span>
+					</p>
+					<p>退件</p>
+				</li>
+				<li class="col-md-3 col-6">
+					<p>
+						<a href="" title="審核中"><img src="layout/tw/images/icon-doc03.svg" alt="審核中"></a>
+						<span>5</span>
+					</p>
+					<p>審核中</p>
+				</li>
+				<li class="col-md-3 col-6">
+					<p>
+						<a href="" title="已通過"><img src="layout/tw/images/icon-doc04.svg" alt="已通過"></a>
+						<span>16</span>
+					</p>
+					<p>已通過</p>
+				</li>
+			</ul>
+		</div>
+		<!-- 重要統計指標 -->
+		<div class="statistical">
+			<div class="title">
+				<h2><span>中小企業重要統計指標</span></h2>
+			</div>
+			<!-- 圓餅圖 -->
+			<div class="row pieChart">
+				<div class="col-md">
+					<div class="title">
+						<h5><span>中小企業家數</span><span class="Number">1,491,420 <span>家</span></span></h5>
+					</div>
+					<div id="pieChart01" class="pie"></div>
+				</div>
+				<div class="col-md">
+					<div class="title">
+						<h5><span>中小企業就業人數</span><span class="Number">9,054 <span>千人</span></span></h5>
+					</div>
+					<div id="pieChart02" class="pie"></div>
+				</div>
+				<div class="col-md">
+					<div class="title">
+						<h5><span>新創中小企業家數</span><span class="Number">441,164 <span>家</span></span></h5>
+					</div>
+					<div id="pieChart03" class="pie"></div>
+				</div>
+			</div>
+			<!-- 長條圖 -->
+
+			<div class="row tabs-wrapper">
+				<!-- 長條圖標籤 -->
+				<div id="horizontalTab" class="col-lg-4">
+					<ul class="tab-nav">
+						<li>
+							<a href="#tab-1" class="tab-1">中小企業家數 / 比率</a>
+						</li>
+						<li>
+							<a href="#tab-2" class="tab-2">中小企業銷售額 / 比率</a>
+						</li>
+						<li>
+							<a href="#tab-3" class="tab-3">中小企業內銷額 / 比率</a>
+						</li>
+						<li>
+							<a href="#tab-4" class="tab-4">中小企業出口額 / 比率</a>
+						</li>
+						<li>
+							<a href="#tab-5" class="tab-5">中小企業就業人數 / 比率</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 標籤內容 -->
+				<div class="col-lg target-tabs">
+					<div id="tab-1" class="tab-content">
+						<div id="barGraph01" class="content-bar"></div>
+					</div>
+					<div id="tab-2" class="tab-content">
+						<div id="barGraph02" class="content-bar"></div>
+					</div>
+					<div id="tab-3" class="tab-content">
+						<div id="barGraph03" class="content-bar"></div>
+					</div>
+					<div id="tab-4" class="tab-content">
+						<div id="barGraph04" class="content-bar"></div>
+					</div>
+					<div id="tab-5" class="tab-content">
+						<div id="barGraph05" class="content-bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 白皮書專區 -->
+		<div class="whiteBook">
+			<div class="title">
+				<h2><span>白皮書專題</span></h2>
+			</div>
+			<div class="row content">
+				<div class="col-lg-2 col-md-4 col-6 img"><img src="layout/img-whitebook-01.jpg" alt=""></div>
+				<div class="row col-md">
+					<div class="col-lg">
+						<div class="whitePaper">
+							<h3><a href="#" title="國際行動支付產業趨勢分析">國際行動支付產業趨勢分析</a></h3>
+							<p>國際大廠布局帶動整體行動支付市場的活絡，金融科技創新應用趨向多元，解構既有的商業模式創造更成熟的金融支付生態環境。本專題旨在掌握國際行動支付業者的趨勢，歸納業者的重點布局，讓中小企業能從中借鑑，並進入國際支付舞臺。</p>
+						</div>
+					</div>
+					<div class="col-lg">
+						<div class="whitePaper">
+							<h3><a href="#" title="2019 社會創新大調查">2019 社會創新大調查</a></h3>
+							<p>由於全球經濟快速發展導致各種失衡現象，世界更加關注企業社會責任的落實，如何滿足社會需求及促進環境友善已然成為國際重要趨勢，中小企業亦應思考如何落實社會責任及環境永續相關議題。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<div class="row unit">
+				<div class="col-md-auto">
+					<span>主辦單位：</span><a href="" title="經濟部中小企業處"><img src="layout/tw/images/logo-ft.png" alt="經濟部中小企業處"></a>
+				</div>
+				<div class="col-md-auto">
+					<span>執行單位：</span><a href="" title="中華經濟研究院"><img src="layout/tw/images/logo-organizer.png" alt="中華經濟研究院"></a>
+				</div>
+			</div>
+			<ul class="row contact">
+				<li class="col-md-auto">&copy; 2020 中華經濟研究院 中小企業動態資料庫</li>
+				<li class="col-md-auto">電話：(02)2735-6006#6031</li>
+				<li class="col-md-auto">Email：yhchen@cier.edu.tw</li>
+				<li class="col-md-auto">地址：台北市大安區長興街75號</li>
+			</ul>
+		</div>
+	</footer>
+	<script src="js/jquery-1.8.1.min.js" type="text/javascript"></script>
+	<script src="js/index.js"></script>
+	<script src="js/jquery.responsiveTabs.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/themes/kelly.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+	<!-- Chart code -->
+	<script src="js/bars.js"></script>
+	<script src="js/pie.js"></script>
+
+	<!-- 校稿用 -->
+	<!--下列css及網頁大集合連結為測試資料,套程式時請刪除-->
+	<link href="demo/style.css" rel="stylesheet" type="text/css" />
+	<div class="ifun_text_menu">
+		<ul>
+			<li><a href="">Menu</a>
+				<ul>
+					<li><a href="index.html">首頁</a></li>
+					<li><a href="search.html">查詢頁</a></li>
+					<li><a href="search-rule.html">查詢結果頁</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>

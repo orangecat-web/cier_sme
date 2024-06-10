@@ -1,0 +1,89 @@
+// RWD 設定
+=breakpoint($point: 1)
+	@if $point null == true
+	@if $point == sm
+		// bootstarp 內建 Small devices (landscape phones, 576px and up) 手機橫的
+		@media screen and (max-width: 767.98px)
+			@content
+	@else if $point == md
+		// bootstarp 內建 Medium devices (tablets, 768px and up) 平板直的
+		@media screen and (max-width: 991.98px)
+			@content
+	@else if $point == lg
+		// bootstarp 內建 Large devices (desktops, 992px and up) 平板橫的 & 小螢幕電腦 ex.1024
+		@media screen and (max-width: 1199.98px)
+			@content
+	@else if $point == xl
+		// bootstarp 內建Extra large devices (large desktops, 1200px and up) 寬 1200 以上螢幕
+		@media screen and (min-width: 1200px)
+			@content
+	@else if $point == mo1280
+		// 橘子預設 寬 1280 x 800 8:5 以上螢幕
+		@media screen and (min-width: 1281px)
+			@content
+	@else if $point == mo1366
+		// 橘子預設 寬 1366 x 768 16:9 以上螢幕
+		@media screen and (min-width: 1367px)
+			@content
+	@else if $point == mo1440
+		// 橘子預設 寬 1440 x 900 8:5 以上螢幕
+		@media screen and (min-width: 1441px)
+			@content
+	@else if $point == mo1600
+		// 橘子預設 寬 1600 x 900 16:9 以上螢幕
+		@media screen and (min-width: 1601px)
+			@content
+	@else if $point == mo1680
+		// 橘子預設 寬 1680 x 1050 8:5 以上螢幕
+		@media screen and (min-width:1681px)
+			@content
+	@else if $point == mo1920
+		// 橘子預設 寬 1920 x 1080 16:9 以上螢幕
+		@media screen and (min-width: 1921px)
+			@content
+	@else if $point == iphone5p
+		// iPhone 5 & 5S
+		@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)
+			@content
+	@else if $point == iphone5l
+		@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)
+			@content
+	@else if $point == iphone6p
+		// iPhone 6, 7, & 8
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait)
+			@content
+	@else if $point == iphone6l
+		@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)
+			@content
+	@else if $point == iphoneplusl
+		// iPhone 6, 7, & 8 Plus
+		@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait)
+			@content
+	@else if $point == iphoneplusp
+		@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape)
+			@content
+	@else if $point == iphonexl
+		// iPhone X
+		@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)
+			@content
+	@else if $point == iphonexp
+		@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : landscape)
+			@content
+	@else if $point == ipadp
+		// Retina iPad
+		@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2)
+			@content
+	@else if $point == ipadl
+		@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2)
+			@content
+	@else if $point == ipadprop
+		// Retina iPad pro
+		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)
+			@content
+	@else if $point == ipadprol
+		@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape)
+			@content
+	@else
+		// Extra small devices (portrait phones, less than 576px) 手機直的
+		@media screen and (max-width: 575px)
+			@content
